@@ -21,7 +21,7 @@ const Nav: FC<Props> = ({ activeTab }) => {
         sx={(theme) => ({
           background: theme.colors.blue[7],
         })}
-        className="flex justify-between gap-[10px] rounded-full px-[10px] py-2"
+        className="flex justify-between gap-[10px] rounded-full p-3"
       >
         <Tabs.Tab
           className={`flex-1 rounded-full text-xl font-bold ${
