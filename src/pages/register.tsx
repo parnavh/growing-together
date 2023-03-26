@@ -1,57 +1,78 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Button } from '@mantine/core';
-import GoogleSignIn from '@/components/GoogleSignIn';
+import Link from "next/link";
+import Image from "next/image";
+import { Button, Divider } from "@mantine/core";
+import GoogleSignIn from "@/components/GoogleSignIn";
 
 export default function register() {
   return (
-    <div className='flex flex-col items-center bg-[#D0EBFF] pb-10'>
-        
-        <Image
-          width={199}
-          height={199}
-          src="/images/logo.png"
-          alt="Growing Together Logo"
-        />
+    <div className="flex min-h-screen flex-col items-center bg-[#D0EBFF] pb-10">
+      <Image
+        width={199}
+        height={199}
+        src="/images/logo.png"
+        alt="Growing Together Logo"
+      />
 
-        <div className='flex flex-col w-auto bg-[#1C7ED6] rounded-md mx-4 text-white p-10'>
-            <p className='text-3xl'>Welcome!</p>
-            <p className='text-xl -mt-6'>
-                Please register to continue.
-            </p>
-            <form className='flex flex-col gap-3'>
-                <div className='flex flex-col gap-1'>
-                    <label htmlFor="email">First Name</label>
-                    <input className='p-3 rounded-lg border-none' type="text" name="fname" id="" placeholder='First Name' />
-                </div>
-                <div className='flex flex-col gap-1'>
-                    <label htmlFor="password">Last Name</label>
-                    <input className='p-3 rounded-lg border-none' type="text" name="lname" id="" placeholder='Last Name' />
-                </div>
-                <div className='flex flex-col gap-1'>
-                    <label htmlFor="email">Email</label>
-                    <input className='p-3 rounded-lg border-none' type="email" name="email" id="" placeholder='Email' />
-                </div>
-                <div className='flex flex-col gap-1'>
-                    <label htmlFor="password">Password</label>
-                    <input className='p-3 rounded-lg border-none' type="password" name="password" id="" placeholder='Password' />
-                </div>
-            </form>
-            <Button type='submit' className='mt-5 bg-white text-black hover:text-white hover:shadow-md '>Submit</Button>
-            <div className="mx-auto">
-                <h3>OR</h3>
-            </div>  
-            <GoogleSignIn></GoogleSignIn>
-            <div className='flex flex-col mt-4 text-lg items-center'>
-                <p className='mb-2'>
-                    Already have an account?
-                </p>
-                <Link href="/login">
-                    Login
-                </Link>
-            </div>
+      <div className="mx-4 flex w-11/12 max-w-md flex-col rounded-md bg-[#1C7ED6] p-10 text-white">
+        <p className="text-3xl">Welcome!</p>
+        <p className="-mt-6 text-xl">Please register to continue.</p>
+        <form className="flex flex-col">
+          <label htmlFor="email" className="mb-1">
+            First Name
+          </label>
+          <input
+            className="mb-3 rounded-lg border-none p-3"
+            type="text"
+            name="fname"
+            id=""
+            placeholder="First Name"
+          />
+          <label htmlFor="password" className="mb-1">
+            Last Name
+          </label>
+          <input
+            className="mb-3 rounded-lg border-none p-3"
+            type="text"
+            name="lname"
+            id=""
+            placeholder="Last Name"
+          />
+          <label htmlFor="email" className="mb-1">
+            Email
+          </label>
+          <input
+            className="mb-3 rounded-lg border-none p-3"
+            type="email"
+            name="email"
+            id=""
+            placeholder="Email"
+          />
+          <label htmlFor="password" className="mb-1">
+            Password
+          </label>
+          <input
+            className="mb-3 rounded-lg border-none p-3"
+            type="password"
+            name="password"
+            id=""
+            placeholder="Password"
+          />
+          <Button type="submit" variant="white" className="mt-5 uppercase">
+            Submit
+          </Button>
+        </form>
+        <Divider
+          size="sm"
+          label={<span className="my-3 text-lg">OR</span>}
+          labelPosition="center"
+          color="white"
+        />
+        <GoogleSignIn />
+        <div className="mt-4 flex flex-col items-center text-lg">
+          <p className="mb-2">Already have an account?</p>
+          <Link href="/login">Login</Link>
         </div>
+      </div>
     </div>
-  )
+  );
 }
