@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Button } from '@mantine/core';
 import GoogleSignIn from '@/components/GoogleSignIn';
 
 export default function login() {
   return (
-    <div className='flex flex-col items-center bg-[#D0EBFF] pb-10 '>
+    <div className='flex flex-col items-center bg-[#D0EBFF] pb-10'>
         
         <Image
           width={199}
@@ -19,7 +20,7 @@ export default function login() {
             <p className='text-xl -mt-6'>
                 Please sign in to continue.
             </p>
-            <div className='flex flex-col gap-3'>
+            <form className='flex flex-col gap-3'>
                 <div className='flex flex-col gap-1'>
                     <label htmlFor="email">Email</label>
                     <input className='p-3 rounded-lg border-none' type="email" name="email" id="" placeholder='Email' />
@@ -27,9 +28,9 @@ export default function login() {
                 <div className='flex flex-col gap-1'>
                     <label htmlFor="password">Password</label>
                     <input className='p-3 rounded-lg border-none' type="password" name="password" id="" placeholder='Password' />
-                </div>
-                
-            </div>
+                </div>    
+            </form>
+            <Button type='submit' className='mt-5 bg-white text-black hover:text-white hover:shadow-md '>Submit</Button>
             <div className="mx-auto">
                 <h3>OR</h3>
             </div>  

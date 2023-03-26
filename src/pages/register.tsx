@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Button } from '@mantine/core';
 import GoogleSignIn from '@/components/GoogleSignIn';
 
 export default function register() {
@@ -19,7 +20,7 @@ export default function register() {
             <p className='text-xl -mt-6'>
                 Please register to continue.
             </p>
-            <div className='flex flex-col gap-3'>
+            <form className='flex flex-col gap-3'>
                 <div className='flex flex-col gap-1'>
                     <label htmlFor="email">First Name</label>
                     <input className='p-3 rounded-lg border-none' type="text" name="fname" id="" placeholder='First Name' />
@@ -36,8 +37,8 @@ export default function register() {
                     <label htmlFor="password">Password</label>
                     <input className='p-3 rounded-lg border-none' type="password" name="password" id="" placeholder='Password' />
                 </div>
-                
-            </div>
+            </form>
+            <Button type='submit' className='mt-5 bg-white text-black hover:text-white hover:shadow-md '>Submit</Button>
             <div className="mx-auto">
                 <h3>OR</h3>
             </div>  
