@@ -5,6 +5,8 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { api } from "@/utils/api";
 import Image from "next/image";
 import Nav from "@/components/Nav";
+import HomeCard from "@/components/HomeCard";
+import { Grid, Text } from "@mantine/core";
 
 const Home: NextPage = () => {
   return (
@@ -22,9 +24,44 @@ const Home: NextPage = () => {
 
         <Nav activeTab="home" />
 
-        <div className="flex flex-col items-center gap-2">
+        {/* <div className="flex flex-col items-center gap-2">
           <AuthShowcase />
-        </div>
+        </div> */}
+
+        <Text mt={"3rem"} size={"2rem"} weight={600}>
+          Welcome Back, Joe!
+        </Text>
+        <Text ta="center" mt={"0.5rem"} weight={500} px={{ base: "md" }}>
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
+          eaque eius sed itaque laborum. Tempora."
+        </Text>
+
+        <Grid
+          gutter={"2rem"}
+          gutterSm={"2rem"}
+          gutterLg={"3.5rem"}
+          w={{ base: "75%", lg: "65%" }}
+          my={{ base: "3rem", sm: "3rem" }}
+        >
+          <Grid.Col span={12} sm={6} lg={4}>
+            <HomeCard />
+          </Grid.Col>
+          <Grid.Col span={12} sm={6} lg={4}>
+            <HomeCard />
+          </Grid.Col>
+          <Grid.Col span={12} sm={6} lg={4}>
+            <HomeCard />
+          </Grid.Col>
+          <Grid.Col span={12} sm={6} lg={4}>
+            <HomeCard />
+          </Grid.Col>
+          <Grid.Col span={12} sm={6} lg={4}>
+            <HomeCard />
+          </Grid.Col>
+          <Grid.Col span={12} sm={6} lg={4}>
+            <HomeCard />
+          </Grid.Col>
+        </Grid>
       </main>
     </>
   );
