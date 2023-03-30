@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { Card, Text, Button } from "@mantine/core";
 
@@ -10,7 +9,7 @@ export default function HomeCard() {
       bg="#228BE6"
       mx={{ lg: "xs" }}
     >
-      <Image width={70} height={70} src="/images/CardVector.png" alt="Vector" />
+      <Image width={60} height={70} src="/images/CardVector.png" alt="Vector" />
       <Text weight={500} size="1.4rem" color="white" mt={7}>
         Baby Care Tips
       </Text>
