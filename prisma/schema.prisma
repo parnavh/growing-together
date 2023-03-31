@@ -48,6 +48,12 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
+    childName     String?
+    childDob      DateTime?
+    parentAge     Int?
+    city          String?
+    pinCode       String?
+    annualIncome  BigInt?
 }
 
 model VerificationToken {

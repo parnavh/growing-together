@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Head from "next/head";
 import { getServerAuthSession } from "@/server/auth";
 import type { GetServerSidePropsContext } from "next";
 import { Button, type ButtonProps } from "@mantine/core";
@@ -34,14 +34,15 @@ export default function Login() {
           alt="Growing Together Logo"
         />
 
-      <div className="mx-4 flex w-11/12 max-w-md flex-col rounded-md bg-[#1C7ED6] p-10 text-center text-white">
-        <p className="text-3xl">Welcome!</p>
-        <p className="-mt-6 text-xl">Please sign in to continue.</p>
-        <GoogleButton radius="xl" mb={30}>
-          Sign In with Google
-        </GoogleButton>
+        <div className="mx-4 flex w-11/12 max-w-md flex-col rounded-md bg-[#1C7ED6] p-10 text-center text-white">
+          <p className="text-3xl">Welcome!</p>
+          <p className="-mt-6 text-xl">Please sign in to continue.</p>
+          <GoogleButton radius="xl" mb={30}>
+            Sign In with Google
+          </GoogleButton>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
