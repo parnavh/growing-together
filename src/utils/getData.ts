@@ -374,6 +374,7 @@ const getRandomQuote = (): Quote =>
 
 interface Article {
   title: string;
+  thumbnail: string;
   link: string;
   description: string;
   tags: string[];
@@ -384,6 +385,8 @@ const articles: Article[] = [
   {
     title: "Your post-pregnancy body",
     link: "https://www.nhs.uk/conditions/baby/support-and-services/your-post-pregnancy-body/",
+    thumbnail:
+      "https://www.hopkinsmedicine.org/-/media/images/health/3_-wellness/womans-health/momma-and-me-workout.ashx?h=351&w=640&hash=21DEB53B090C1D2AADE600F24BBA93FD",
     description:
       "Tips and exercises to help you get back into shape after birth. Includes advice on diastasis recti (separated stomach muscles), how to ease back pain and safe exercises for the pelvic floor and stomach.",
     tags: ["Health"],
