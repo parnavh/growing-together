@@ -195,7 +195,7 @@ const vaccineData: Vaccine[] = [
   },
 ];
 
-interface Quote {
+export interface Quote {
   quote: string;
   cite: string;
 }
@@ -206,31 +206,38 @@ const quoteData: Quote[] = [
     cite: "Ashlee Edens",
   },
   {
-    quote: "If you’ve never been hated by your child, you've never been a parent.",
+    quote:
+      "If you've never been hated by your child, you've never been a parent.",
     cite: "Bette Davis",
   },
   {
-    quote: "Sometimes, You will never know the value of a moment until it becomes a memory.",
+    quote:
+      "Sometimes, You will never know the value of a moment until it becomes a memory.",
     cite: "Dr. Seuss",
   },
   {
-    quote: "Parents can only give good advice or put them on the right paths, but the final forming of a person’s character lies in their own hands.",
+    quote:
+      "Parents can only give good advice or put them on the right paths, but the final forming of a person's character lies in their own hands.",
     cite: "Anne Frank",
   },
   {
-    quote: "You know children are growing up when they start asking questions that have answers.",
+    quote:
+      "You know children are growing up when they start asking questions that have answers.",
     cite: "John J. Plomp",
   },
   {
-    quote: "As your kids grow they may forget what you said, but won’t forget how you made them feel.",
+    quote:
+      "As your kids grow they may forget what you said, but won't forget how you made them feel.",
     cite: "Kevin Heath",
   },
   {
-    quote: "The empty nest comes quickly. Do not squander your most precious privilege of participating in the lives of your children.",
+    quote:
+      "The empty nest comes quickly. Do not squander your most precious privilege of participating in the lives of your children.",
     cite: "Alan Hedquist",
   },
   {
-    quote: "Your son will always be your little boy and your daughters will always be your little girls!",
+    quote:
+      "Your son will always be your little boy and your daughters will always be your little girls!",
     cite: "Felicisima Nietes De Jesus",
   },
   {
@@ -238,15 +245,18 @@ const quoteData: Quote[] = [
     cite: "Polish Proverb",
   },
   {
-    quote: "Cherish your children… for they are the footprints you will leave behind.",
+    quote:
+      "Cherish your children… for they are the footprints you will leave behind.",
     cite: "Taylor Evan Fulks",
   },
   {
-    quote: "I regret not having had more time with my kids when they were growing up.",
+    quote:
+      "I regret not having had more time with my kids when they were growing up.",
     cite: "Tina Turner",
   },
   {
-    quote: "They’re all grown-ups now but I still have their sweet voices in my ear, the way they laughed and talked…it’s implanted in my memory…I love my kids so much.",
+    quote:
+      "They're all grown-ups now but I still have their sweet voices in my ear, the way they laughed and talked…it's implanted in my memory…I love my kids so much.",
     cite: "Emelina Fabian Frobel",
   },
   {
@@ -254,23 +264,28 @@ const quoteData: Quote[] = [
     cite: "Joseph Joubert",
   },
   {
-    quote: "There are only 940 Saturdays between a child’s birth and her leaving for college.",
+    quote:
+      "There are only 940 Saturdays between a child's birth and her leaving for college.",
     cite: "Harley Rotbart",
   },
   {
-    quote: "When we give children advice or instant solutions, we deprive them of the experience that comes from wrestling with their own problems.",
+    quote:
+      "When we give children advice or instant solutions, we deprive them of the experience that comes from wrestling with their own problems.",
     cite: "Adele Faber",
   },
   {
-    quote: "I continue to believe that if children are given the necessary tools to succeed, they will succeed beyond their wildest dreams!",
+    quote:
+      "I continue to believe that if children are given the necessary tools to succeed, they will succeed beyond their wildest dreams!",
     cite: "David Vitter",
   },
   {
-    quote: "There are no perfect parents, and there are no perfect children, but there are plenty of perfect moments along the way.",
+    quote:
+      "There are no perfect parents, and there are no perfect children, but there are plenty of perfect moments along the way.",
     cite: "Dave Willis",
   },
   {
-    quote: "That’s the real trouble with the world, too many people grow up. They forget.",
+    quote:
+      "That's the real trouble with the world, too many people grow up. They forget.",
     cite: "Walt Disney",
   },
   {
@@ -278,15 +293,17 @@ const quoteData: Quote[] = [
     cite: "Tom Robbins",
   },
   {
-    quote: "We’ve had bad luck with children; they’ve all grown up.",
+    quote: "We've had bad luck with children; they've all grown up.",
     cite: "Christopher Morley",
   },
   {
-    quote: "You’ve got to do your own growing, no matter how tall your grandfather was.",
+    quote:
+      "You've got to do your own growing, no matter how tall your grandfather was.",
     cite: "Irish saying",
   },
   {
-    quote: "You can learn many things from children. How much patience you have, for instance.",
+    quote:
+      "You can learn many things from children. How much patience you have, for instance.",
     cite: "Franklin P. Jones",
   },
   {
@@ -294,7 +311,8 @@ const quoteData: Quote[] = [
     cite: "Woody Harrelson",
   },
   {
-    quote: "Don’t try to make children grow up to be like you, or they may do it.",
+    quote:
+      "Don't try to make children grow up to be like you, or they may do it.",
     cite: "Russell Baker",
   },
   {
@@ -302,15 +320,18 @@ const quoteData: Quote[] = [
     cite: "Chili Davis",
   },
   {
-    quote: "Children are a great comfort in your old age- and they help you reach it faster too.",
+    quote:
+      "Children are a great comfort in your old age- and they help you reach it faster too.",
     cite: "Lionel Kauffman",
   },
   {
-    quote: "Motherhood is an early retirement position. Your children do grow up.",
+    quote:
+      "Motherhood is an early retirement position. Your children do grow up.",
     cite: "Colleen Parro",
   },
   {
-    quote: "No one tells you that the hardest part of motherhood is when your kids grow up.",
+    quote:
+      "No one tells you that the hardest part of motherhood is when your kids grow up.",
     cite: "Anonymous",
   },
   {
@@ -318,11 +339,13 @@ const quoteData: Quote[] = [
     cite: "Anonymous",
   },
   {
-    quote: "Hold on to the tiny moments and cherish the little snuggles. They grow up so fast!",
+    quote:
+      "Hold on to the tiny moments and cherish the little snuggles. They grow up so fast!",
     cite: "Anonymous",
   },
   {
-    quote: "The greatest gift you can give your kids is your time, your love, and your attention.",
+    quote:
+      "The greatest gift you can give your kids is your time, your love, and your attention.",
     cite: "Anonymous",
   },
   {
@@ -330,11 +353,13 @@ const quoteData: Quote[] = [
     cite: "Anonymous",
   },
   {
-    quote: "Once a mom, always a mom. No matter how grown the kids are, they will always be your precious babies in your eyes!",
+    quote:
+      "Once a mom, always a mom. No matter how grown the kids are, they will always be your precious babies in your eyes!",
     cite: "Anonymous",
   },
   {
-    quote: "Let them be little for they are only little for such a little while.",
+    quote:
+      "Let them be little for they are only little for such a little while.",
     cite: "Anonymous",
   },
   {
@@ -343,4 +368,27 @@ const quoteData: Quote[] = [
   },
 ];
 
-export { vaccineData, quoteData };
+const getRandomQuote = (): Quote =>
+  // @ts-ignore
+  quoteData[Math.floor(Math.random() * quoteData.length)];
+
+interface Article {
+  title: string;
+  link: string;
+  description: string;
+  tags: string[];
+  readingTime: number; // in minutes
+}
+
+const articles: Article[] = [
+  {
+    title: "Your post-pregnancy body",
+    link: "https://www.nhs.uk/conditions/baby/support-and-services/your-post-pregnancy-body/",
+    description:
+      "Tips and exercises to help you get back into shape after birth. Includes advice on diastasis recti (separated stomach muscles), how to ease back pain and safe exercises for the pelvic floor and stomach.",
+    tags: ["Health"],
+    readingTime: 3,
+  },
+];
+
+export { vaccineData, getRandomQuote, articles };
