@@ -22,13 +22,17 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
 export default function Login() {
   return (
-    <div className="flex min-h-screen flex-col items-center bg-[#D0EBFF] pb-10">
-      <Image
-        width={199}
-        height={199}
-        src="/images/logo.png"
-        alt="Growing Together Logo"
-      />
+    <>
+      <Head>
+        <title>Login | Growing Together</title>
+      </Head>
+      <div className="flex min-h-screen flex-col items-center bg-[#D0EBFF] pb-10">
+        <Image
+          width={199}
+          height={199}
+          src="/images/logo.png"
+          alt="Growing Together Logo"
+        />
 
       <div className="mx-4 flex w-11/12 max-w-md flex-col rounded-md bg-[#1C7ED6] p-10 text-center text-white">
         <p className="text-3xl">Welcome!</p>

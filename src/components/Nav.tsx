@@ -3,19 +3,18 @@ import { useRouter } from "next/router";
 import type { FC } from "react";
 import { IconHome, IconVaccine, IconStethoscope } from "@tabler/icons-react";
 
-interface Props {
-  activeTab: string;
-}
-
-const Nav: FC<Props> = ({ activeTab }) => {
+const Nav: FC = () => {
   const router = useRouter();
+  const { pathname: activeTab } = router;
+
+  console.log("active:", activeTab);
 
   return (
     <Tabs
-      value={router.query.activeTab as string}
+      value={activeTab}
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
       onTabChange={(value: string) => router.push(value)}
-      className="w-4/5 max-w-[640px]"
+      className="mx-auto w-4/5 max-w-[640px]"
     >
       <Tabs.List
         sx={(theme) => ({
@@ -25,7 +24,7 @@ const Nav: FC<Props> = ({ activeTab }) => {
       >
         <Tabs.Tab
           className={`flex-1 rounded-full text-xl font-bold ${
-            activeTab === "home"
+            activeTab === "/"
               ? "bg-white text-black"
               : "text-white hover:bg-white hover:text-black"
           }`}
@@ -38,7 +37,7 @@ const Nav: FC<Props> = ({ activeTab }) => {
         </Tabs.Tab>
         <Tabs.Tab
           className={`flex-1 rounded-full text-xl font-bold ${
-            activeTab === "vaccination"
+            activeTab === "/vaccination"
               ? "bg-white text-black"
               : "text-white hover:bg-white hover:text-black"
           }`}
@@ -51,7 +50,7 @@ const Nav: FC<Props> = ({ activeTab }) => {
         </Tabs.Tab>
         <Tabs.Tab
           className={`flex-1 rounded-full text-xl font-bold ${
-            activeTab === "paediatricians"
+            activeTab === "/paediatricians"
               ? "bg-white text-black"
               : "text-white hover:bg-white hover:text-black"
           }`}
