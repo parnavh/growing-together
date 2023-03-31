@@ -409,7 +409,7 @@ const articles: Article[] = [
       "https://cdn.cdnparenting.com/articles/2018/02/164184323-H.webp",
     description:
       "These baby exercises can help baby strengthen muscles and work on developmental skills.",
-    tags: ["Health","Exercise","Advice","Tips & Tricks"],
+    tags: ["Health","Exercise","Tips & Tricks"],
     readingTime: 15,
   },
   {
@@ -439,7 +439,7 @@ const articles: Article[] = [
       "https://www.lancastergeneralhealth.org/-/media/images/lancaster%20general/images/healthhub/motherhood/lgh_healthhub_motherhood_1200x600_stress_anxiety.ashx?mw=1200&mh=600",
     description:
       "How to cope with stress after the birth of a baby, including tips for relaxation, joining support groups and relationship advice.",
-    tags: ["Health","Mental Health","Advice","Self Care"],
+    tags: ["Health","Mental Health","Self Care"],
     readingTime: 2,
   },
   {
@@ -449,7 +449,7 @@ const articles: Article[] = [
       "https://www.hopkinsmedicine.org/-/media/images/health/3_-wellness/womans-health/momma-and-me-workout.ashx?h=351&w=640&hash=21DEB53B090C1D2AADE600F24BBA93FD",
     description:
       "Tips and exercises to help you get back into shape after birth. Includes advice on diastasis recti (separated stomach muscles), how to ease back pain and safe exercises for the pelvic floor and stomach.",
-    tags: ["Mental Health","Advice","Selfcare"],
+    tags: ["Mental Health","Selfcare"],
     readingTime: 3,
   },
   {
@@ -469,7 +469,7 @@ const articles: Article[] = [
       "https://www.unicef.org/parenting/sites/unicef.org.parenting/files/styles/hero_extended/public/AdobeStock_166161324.jpeg?itok=YuY-dnrO",
     description:
       "Feeding your children who are between 1-2 years old can be a fun and exciting experience as they start to explore new foods and flavors. At this age, it's important to focus on providing a balanced diet that meets their nutritional needs as they continue to grow and develop.",
-    tags: ["Health","Food","Advice","Tips & Tricks"],
+    tags: ["Health","Food","Tips & Tricks"],
     readingTime: 3,
   },
   {
@@ -479,7 +479,7 @@ const articles: Article[] = [
       "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/10/345237-Best-formula-for-babies-Newborns-breastfed-and-more-1296x728-Header-01adb9-1024x575.jpg",
     description:
       "When it comes to feeding your little one, choosing the right formula can be a daunting task. With so many options on the market, it can be difficult to know where to start. To help you make an informed decision, here are 9 of the best baby formulas that are currently available.",
-    tags: ["Health","Food","Advice","Tips & Tricks"],
+    tags: ["Health","Food","Tips & Tricks"],
     readingTime: 15,
   },
   {
@@ -519,7 +519,7 @@ const articles: Article[] = [
       "https://theglasshammer.com/wp-content/uploads/2015/04/happy-working-women.jpg",
     description:
       "As a single mom, advancing your career can be a challenging but rewarding experience. Here are some tips to help you navigate the path to career advancement",
-    tags: ["Career","Self Career","Finance","Work-Life"],
+    tags: ["Career","Self Career","Finance"],
     readingTime: 3,
   },
   {
@@ -529,7 +529,7 @@ const articles: Article[] = [
       "https://fairygodboss.com/_next/image?url=https%3A%2F%2Fd207ibygpg2z1x.cloudfront.net%2Fimage%2Fupload%2Fdpr_1%2Cq_auto%2Cc_scale%2Cf_auto%2Cw_669%2Farticles_upload%2Fmain%2Fiiqshxzrklfn7qhbabf8.webp%3Ftemp%3D1&w=750&q=75",
     description:
       "Balancing a career with single motherhood can be challenging, but it's also possible to achieve success. Here are 15 career tips from successful single mom professionals",
-    tags: ["Career","Self Career","Finance","Work-Life"],
+    tags: ["Career","Self Career","Finance"],
     readingTime: 10,
   },
 ];
