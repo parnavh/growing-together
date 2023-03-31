@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Button, Divider } from "@mantine/core";
 import GoogleSignIn from "@/components/GoogleSignIn";
 
+import React from 'react'
+
 export default function register() {
   return (
     <div className="flex min-h-screen flex-col items-center bg-[#D0EBFF] pb-10">

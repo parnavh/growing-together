@@ -392,6 +392,146 @@ const articles: Article[] = [
     tags: ["Health"],
     readingTime: 3,
   },
+  {
+    title: "Getting Your Baby to Sleep Through the Night: Tips for New Moms",
+    link: "https://baby.lovetoknow.com/baby-sleep-advice/when-do-babies-start-sleeping-through-night-parents-guide",
+    thumbnail:
+      "https://cf.ltkcdn.net/baby/images/std/333129-800x533-baby-awake-1452172973.webp",
+    description:
+      "When do babies sleep through the night? Every new parent wants to know the answer to this question.These tips can help you understand what impacts your baby's sleep and how you can help them sleep them through the night.",
+    tags: ["SLeep","Tips & Tricks","Advice"],
+    readingTime: 5,
+  },
+  {
+    title: "14 Baby Exercises to Get Your Baby Moving",
+    link: "https://www.thebump.com/a/baby-exercises",
+    thumbnail:
+      "https://cdn.cdnparenting.com/articles/2018/02/164184323-H.webp",
+    description:
+      "These baby exercises can help baby strengthen muscles and work on developmental skills.",
+    tags: ["Health","Exercise","Advice","Tips & Tricks"],
+    readingTime: 15,
+  },
+  {
+    title: "Here are six lessons about being a single mom I’d like to share",
+    link: "https://www.mother.ly/parenting/single-parenting/single-motherhood-postpartum-perspective/",
+    thumbnail:
+      "https://www.mother.ly/wp-content/uploads/2022/11/young-mom-playing-with-baby-on-the-bed.jpg",
+    description:
+      "I became a single mom the same month I gave birth. Here’s what I want others to know.",
+    tags: ["Advice","Experience"],
+    readingTime: 5,
+  },
+  {
+    title: "Keeping fit and healthy with a baby",
+    link: "https://www.nhs.uk/conditions/baby/support-and-services/keeping-fit-and-healthy-with-a-baby/",
+    thumbnail:
+      "https://cdn.cdnparenting.com/articles/2018/10/10-weight-gain-tips-for-babies-to-make-sure-he-is-fit-not-obese.webp",
+    description:
+      "Read more about exercising and healthy eating after giving birth, including ideas for staying fit with a baby and easy ways for new parents to eat more healthily. Also, tips for parents on stopping smoking.",
+    tags: ["Health","Exercise","Advice"],
+    readingTime: 4,
+  },
+  {
+    title: "Coping with stress after having a baby",
+    link: "https://www.nhs.uk/conditions/baby/support-and-services/coping-with-stress-after-having-a-baby/",
+    thumbnail:
+      "https://www.lancastergeneralhealth.org/-/media/images/lancaster%20general/images/healthhub/motherhood/lgh_healthhub_motherhood_1200x600_stress_anxiety.ashx?mw=1200&mh=600",
+    description:
+      "How to cope with stress after the birth of a baby, including tips for relaxation, joining support groups and relationship advice.",
+    tags: ["Health","Mental Health","Advice","Self Care"],
+    readingTime: 2,
+  },
+  {
+    title: "7 Self-Care Tips for Single Moms",
+    link: "https://amyandrose.com/blogs/parenting/self-care-tips-for-single-moms/",
+    thumbnail:
+      "https://www.hopkinsmedicine.org/-/media/images/health/3_-wellness/womans-health/momma-and-me-workout.ashx?h=351&w=640&hash=21DEB53B090C1D2AADE600F24BBA93FD",
+    description:
+      "Tips and exercises to help you get back into shape after birth. Includes advice on diastasis recti (separated stomach muscles), how to ease back pain and safe exercises for the pelvic floor and stomach.",
+    tags: ["Mental Health","Advice","Selfcare"],
+    readingTime: 3,
+  },
+  {
+    title: "PMMVY: Pradhan Mantri Matru Vandana Yojana - Eligibility, Features and Registration Process",
+    link: "https://www.acko.com/health-insurance/pradhan-mantri-matru-vandana-yojana/",
+    thumbnail:
+      "https://images.ctfassets.net/uwf0n1j71a7j/3of11h5CPNlBXSSsfVKJl4/ccd206609c735d70a7df236bf5113d71/pradhan-mantri-matru-vandana-yojana.png?fm=webp&w=1200&q=75",
+    description:
+      "Pradhan Mantri Matru Vandana Yojana is a government-initiated scheme. Get to know about the scheme's objective, eligibility criteria, steps to register, and benefits.",
+    tags: ["Health","Finance","Advice"],
+    readingTime: 20,
+  },
+  {
+    title: "Feeding your baby: 1–2 years - UNICEF",
+    link: "https://www.unicef.org/parenting/food-nutrition/feeding-your-baby-1-2-years",
+    thumbnail:
+      "https://www.unicef.org/parenting/sites/unicef.org.parenting/files/styles/hero_extended/public/AdobeStock_166161324.jpeg?itok=YuY-dnrO",
+    description:
+      "Feeding your children who are between 1-2 years old can be a fun and exciting experience as they start to explore new foods and flavors. At this age, it's important to focus on providing a balanced diet that meets their nutritional needs as they continue to grow and develop.",
+    tags: ["Health","Food","Advice","Tips & Tricks"],
+    readingTime: 3,
+  },
+  {
+    title: "9 of the best baby formulas",
+    link: "https://www.medicalnewstoday.com/articles/best-formula-for-babies",
+    thumbnail:
+      "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/10/345237-Best-formula-for-babies-Newborns-breastfed-and-more-1296x728-Header-01adb9-1024x575.jpg",
+    description:
+      "When it comes to feeding your little one, choosing the right formula can be a daunting task. With so many options on the market, it can be difficult to know where to start. To help you make an informed decision, here are 9 of the best baby formulas that are currently available.",
+    tags: ["Health","Food","Advice","Tips & Tricks"],
+    readingTime: 15,
+  },
+  {
+    title: "Wellbeing Tips for Single Parents",
+    link: "https://blog.plummhealth.com/mental-health/counselling/wellbeing-tips-for-single-parents/",
+    thumbnail:
+      "https://blog.plummhealth.com/wp-content/uploads/2022/07/wllbeing_tips_for_single_parents-1200x675.jpeg",
+    description:
+      "Being a single parent can be a challenging and overwhelming experience, but there are many ways to prioritize your wellbeing and manage the demands of parenthood. Here are some wellbeing tips for single parents.",
+    tags: ["Selfcare","Mental Health","Health"],
+    readingTime: 5,
+  },
+  {
+    title: "Mental Health Tips for Single Parents",
+    link: "https://centerstone.org/our-resources/health-wellness/mental-health-tips-for-single-parents/",
+    thumbnail:
+      "https://centerstone.org/wp-content/uploads/Mom-Child-350x233.jpg",
+    description:
+      "Single parenthood can come with unique challenges that can take a toll on one's mental health. As a single parent, taking care of your mental health is just as important as taking care of your child. Here are some mental health tips for single parents",
+    tags: ["Mental Health","Self Care"],
+    readingTime: 2,
+  },
+  {
+    title: "8 Mental Health Challenges Single Moms Face",
+    link: "https://www.talkspace.com/blog/8-mental-health-challenges-single-moms-face/#:~:text=Unfortunately%20many%20single%20moms%20don,depression%2C%20anxiety%20disorders%20and%20PTSD",
+    thumbnail:
+      "https://www.talkspace.com/blog/wp-content/uploads/2016/11/single-moms-mental-health-feature_300W_JR.jpg",
+    description:
+      "Single motherhood can be a rewarding experience, but it also comes with its own unique set of challenges. Here are 8 mental health challenges that single moms often face",
+    tags: ["Mental Health","Self Care"],
+    readingTime: 5,
+  },
+  {
+    title: "A Single Mom’s Guide to Career Advancement",
+    link: "https://theglasshammer.com/2015/04/a-single-moms-guide-to-career-advancement-for-working-moms-too/",
+    thumbnail:
+      "https://theglasshammer.com/wp-content/uploads/2015/04/happy-working-women.jpg",
+    description:
+      "As a single mom, advancing your career can be a challenging but rewarding experience. Here are some tips to help you navigate the path to career advancement",
+    tags: ["Career","Self Career","Finance","Work-Life"],
+    readingTime: 3,
+  },
+  {
+    title: "15 Career Tips For Single Moms, From Successful Single Mom Professionals",
+    link: "https://fairygodboss.com/career-topics/single-mom",
+    thumbnail:
+      "https://fairygodboss.com/_next/image?url=https%3A%2F%2Fd207ibygpg2z1x.cloudfront.net%2Fimage%2Fupload%2Fdpr_1%2Cq_auto%2Cc_scale%2Cf_auto%2Cw_669%2Farticles_upload%2Fmain%2Fiiqshxzrklfn7qhbabf8.webp%3Ftemp%3D1&w=750&q=75",
+    description:
+      "Balancing a career with single motherhood can be challenging, but it's also possible to achieve success. Here are 15 career tips from successful single mom professionals",
+    tags: ["Career","Self Career","Finance","Work-Life"],
+    readingTime: 10,
+  },
 ];
 
 export { vaccineData, getRandomQuote, articles };
