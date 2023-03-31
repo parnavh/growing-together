@@ -205,6 +205,142 @@ const quoteData: Quote[] = [
     quote: "Those little feet, won't be little forever.",
     cite: "Ashlee Edens",
   },
+  {
+    quote: "If you’ve never been hated by your child, you've never been a parent.",
+    cite: "Bette Davis",
+  },
+  {
+    quote: "Sometimes, You will never know the value of a moment until it becomes a memory.",
+    cite: "Dr. Seuss",
+  },
+  {
+    quote: "Parents can only give good advice or put them on the right paths, but the final forming of a person’s character lies in their own hands.",
+    cite: "Anne Frank",
+  },
+  {
+    quote: "You know children are growing up when they start asking questions that have answers.",
+    cite: "John J. Plomp",
+  },
+  {
+    quote: "As your kids grow they may forget what you said, but won’t forget how you made them feel.",
+    cite: "Kevin Heath",
+  },
+  {
+    quote: "The empty nest comes quickly. Do not squander your most precious privilege of participating in the lives of your children.",
+    cite: "Alan Hedquist",
+  },
+  {
+    quote: "Your son will always be your little boy and your daughters will always be your little girls!",
+    cite: "Felicisima Nietes De Jesus",
+  },
+  {
+    quote: "You have a lifetime to work, but children are only young once.",
+    cite: "Polish Proverb",
+  },
+  {
+    quote: "Cherish your children… for they are the footprints you will leave behind.",
+    cite: "Taylor Evan Fulks",
+  },
+  {
+    quote: "I regret not having had more time with my kids when they were growing up.",
+    cite: "Tina Turner",
+  },
+  {
+    quote: "They’re all grown-ups now but I still have their sweet voices in my ear, the way they laughed and talked…it’s implanted in my memory…I love my kids so much.",
+    cite: "Emelina Fabian Frobel",
+  },
+  {
+    quote: "Children need models rather than critics.",
+    cite: "Joseph Joubert",
+  },
+  {
+    quote: "There are only 940 Saturdays between a child’s birth and her leaving for college.",
+    cite: "Harley Rotbart",
+  },
+  {
+    quote: "When we give children advice or instant solutions, we deprive them of the experience that comes from wrestling with their own problems.",
+    cite: "Adele Faber",
+  },
+  {
+    quote: "I continue to believe that if children are given the necessary tools to succeed, they will succeed beyond their wildest dreams!",
+    cite: "David Vitter",
+  },
+  {
+    quote: "There are no perfect parents, and there are no perfect children, but there are plenty of perfect moments along the way.",
+    cite: "Dave Willis",
+  },
+  {
+    quote: "That’s the real trouble with the world, too many people grow up. They forget.",
+    cite: "Walt Disney",
+  },
+  {
+    quote: "When they tell you to grow up, they mean stop growing.",
+    cite: "Tom Robbins",
+  },
+  {
+    quote: "We’ve had bad luck with children; they’ve all grown up.",
+    cite: "Christopher Morley",
+  },
+  {
+    quote: "You’ve got to do your own growing, no matter how tall your grandfather was.",
+    cite: "Irish saying",
+  },
+  {
+    quote: "You can learn many things from children. How much patience you have, for instance.",
+    cite: "Franklin P. Jones",
+  },
+  {
+    quote: "A grownup is a child with layers on.",
+    cite: "Woody Harrelson",
+  },
+  {
+    quote: "Don’t try to make children grow up to be like you, or they may do it.",
+    cite: "Russell Baker",
+  },
+  {
+    quote: "Growing old is mandatory. Growing up is optional.",
+    cite: "Chili Davis",
+  },
+  {
+    quote: "Children are a great comfort in your old age- and they help you reach it faster too.",
+    cite: "Lionel Kauffman",
+  },
+  {
+    quote: "Motherhood is an early retirement position. Your children do grow up.",
+    cite: "Colleen Parro",
+  },
+  {
+    quote: "No one tells you that the hardest part of motherhood is when your kids grow up.",
+    cite: "Anonymous",
+  },
+  {
+    quote: "Kids are great imitators, so give them something great to imitate.",
+    cite: "Anonymous",
+  },
+  {
+    quote: "Hold on to the tiny moments and cherish the little snuggles. They grow up so fast!",
+    cite: "Anonymous",
+  },
+  {
+    quote: "The greatest gift you can give your kids is your time, your love, and your attention.",
+    cite: "Anonymous",
+  },
+  {
+    quote: "Those little feet, won't be little forever.",
+    cite: "Anonymous",
+  },
+  {
+    quote: "Once a mom, always a mom. No matter how grown the kids are, they will always be your precious babies in your eyes!",
+    cite: "Anonymous",
+  },
+  {
+    quote: "Let them be little for they are only little for such a little while.",
+    cite: "Anonymous",
+  },
+  {
+    quote: "Son, you outgrew my lap, but never my heart.",
+    cite: "Anonymous",
+  },
 ];
 
 export { vaccineData, quoteData };
