@@ -1,9 +1,26 @@
-import Link from "next/link";
 import Image from "next/image";
-import { Button, Divider } from "@mantine/core";
-import GoogleSignIn from "@/components/GoogleSignIn";
 
-export default function login() {
+import { getServerAuthSession } from "@/server/auth";
+import type { GetServerSidePropsContext } from "next";
+import { Button, type ButtonProps } from "@mantine/core";
+import { useRouter } from "next/router";
+import { signIn } from "next-auth/react";
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getServerAuthSession(context);
+  if (session) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
+  return { props: {} };
+}
+
+export default function Login() {
   return (
     <div className="flex min-h-screen flex-col items-center bg-[#D0EBFF] pb-10">
       <Image
@@ -13,42 +30,61 @@ export default function login() {
         alt="Growing Together Logo"
       />
 
-      <div className="mx-4 flex w-11/12 max-w-md flex-col rounded-md bg-[#1C7ED6] p-10 text-white">
+      <div className="mx-4 flex w-11/12 max-w-md flex-col rounded-md bg-[#1C7ED6] p-10 text-center text-white">
         <p className="text-3xl">Welcome!</p>
         <p className="-mt-6 text-xl">Please sign in to continue.</p>
-        <form className="flex flex-col">
-          <label htmlFor="email mb-1">Email</label>
-          <input
-            className="mb-3 rounded-lg border-none p-3"
-            type="email"
-            name="email"
-            id=""
-            placeholder="Email"
-          />
-          <label htmlFor="password mb-1">Password</label>
-          <input
-            className="rounded-lg border-none p-3"
-            type="password"
-            name="password"
-            id=""
-            placeholder="Password"
-          />
-          <Button type="submit" variant="white" className="mt-5 uppercase">
-            Submit
-          </Button>
-        </form>
-        <Divider
-          size="sm"
-          label={<span className="my-3 text-lg">OR</span>}
-          labelPosition="center"
-          color="white"
-        />
-        <GoogleSignIn />
-        <div className="mt-4 flex flex-col items-center text-lg">
-          <p className="mb-2">Don&apos;t have an account?</p>
-          <Link href="/register">Register</Link>
-        </div>
+        <GoogleButton radius="xl" mb={30}>
+          Sign In with Google
+        </GoogleButton>
       </div>
     </div>
+  );
+}
+
+function GoogleButton(props: ButtonProps) {
+  const { query } = useRouter();
+
+  return (
+    <Button
+      leftIcon={<GoogleIcon />}
+      variant="default"
+      color="gray"
+      onClick={() =>
+        void signIn("google", {
+          callbackUrl: query.callbackUrl?.toString() ?? "/",
+        })
+      }
+      {...props}
+    />
+  );
+}
+
+function GoogleIcon(props: React.ComponentPropsWithoutRef<"svg">) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid"
+      viewBox="0 0 256 262"
+      width={14}
+      height={14}
+      {...props}
+    >
+      <path
+        fill="#4285F4"
+        d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"
+      />
+      <path
+        fill="#34A853"
+        d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"
+      />
+      <path
+        fill="#FBBC05"
+        d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"
+      />
+      <path
+        fill="#EB4335"
+        d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"
+      />
+    </svg>
   );
 }
