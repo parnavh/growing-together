@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import Head from "next/head";
-import { type FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   Stepper,
@@ -16,6 +16,7 @@ import { IconLocation, IconUser } from "@tabler/icons-react";
 import InputMask from "react-input-mask";
 import { useSession } from "next-auth/react";
 import Submit from "@/components/Submit";
+import { NextPage } from "next";
 
 export interface OnboardingFormValues {
   parentName: string;
@@ -27,7 +28,7 @@ export interface OnboardingFormValues {
   annualIncome: number;
 }
 
-const Onboarding: FC = () => {
+const Onboarding: NextPage = () => {
   const [active, setActive] = useState(0);
   const { data, status } = useSession();
 
