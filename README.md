@@ -1,5 +1,5 @@
 
-# Growign Together
+# Growing Together
 
 ---Intro---
 
