@@ -28,7 +28,8 @@ class _PediatricianState extends State<Pediatrician> {
     // await io.File(syncPath).exists();
     // io.File(syncPath).existsSync();
 
-    DialogAuthCredentials credentials = await DialogAuthCredentials.fromFile('assets/growing-together-382320-691427eb5c51.json');
+    DialogAuthCredentials credentials = await DialogAuthCredentials.fromFile(
+        'assets/keys/growing-together-382320-691427eb5c51.json');
     var rnd = math.Random();
 
     setState(() {
@@ -54,10 +55,12 @@ class _PediatricianState extends State<Pediatrician> {
     String? textResponse = response.text;
     print(response.text);
 
-    if(textResponse == null) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Error in retrieving response, please try again"),behavior: SnackBarBehavior.floating,));
-    }
-    else {
+    if (textResponse == null) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text("Error in retrieving response, please try again"),
+        behavior: SnackBarBehavior.floating,
+      ));
+    } else {
       List<String> new_responses = [textResponse, ...responses];
       List<String> new_queries = [_controller.text, ...queries];
       setState(() {
@@ -66,7 +69,6 @@ class _PediatricianState extends State<Pediatrician> {
         responses = new_responses;
       });
     }
-
   }
 
   Widget findPediatrician(Function errorCallback) {
@@ -82,23 +84,19 @@ class _PediatricianState extends State<Pediatrician> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width*0.5,
+                  width: MediaQuery.of(context).size.width * 0.5,
                   child: TextField(
                     controller: _pincode,
                     onSubmitted: (value) async {
-                      if(_pincode.text != "" && _pincode.text.length == 6) {
+                      if (_pincode.text != "" && _pincode.text.length == 6) {
                         if (await canLaunchUrlString(
-                            "https://www.cybo.com/IN-pin-code/${_pincode
-                                .text}_mumbai/pediatricians/")) {
+                            "https://www.cybo.com/IN-pin-code/${_pincode.text}_mumbai/pediatricians/")) {
                           await launchUrlString(
-                              "https://www.cybo.com/IN-pin-code/${_pincode
-                                  .text}_mumbai/pediatricians/");
-                        }
-                        else {
+                              "https://www.cybo.com/IN-pin-code/${_pincode.text}_mumbai/pediatricians/");
+                        } else {
                           errorCallback();
                         }
-                      }
-                      else {
+                      } else {
                         errorCallback();
                       }
                     },
@@ -109,16 +107,16 @@ class _PediatricianState extends State<Pediatrician> {
                   child: OutlinedButton(
                     child: Text("Find"),
                     onPressed: () async {
-                      if(_pincode.text != "" && _pincode.text.length == 6) {
-                        if(await canLaunchUrlString("https://www.cybo.com/IN-pin-code/${_pincode.text}_mumbai/pediatricians/")) {
+                      if (_pincode.text != "" && _pincode.text.length == 6) {
+                        if (await canLaunchUrlString(
+                            "https://www.cybo.com/IN-pin-code/${_pincode.text}_mumbai/pediatricians/")) {
                           Navigator.of(context).pop();
-                          await launchUrlString("https://www.cybo.com/IN-pin-code/${_pincode.text}_mumbai/pediatricians/");
-                        }
-                        else {
+                          await launchUrlString(
+                              "https://www.cybo.com/IN-pin-code/${_pincode.text}_mumbai/pediatricians/");
+                        } else {
                           errorCallback();
                         }
-                      }
-                      else {
+                      } else {
                         errorCallback();
                       }
                     },
@@ -154,22 +152,22 @@ class _PediatricianState extends State<Pediatrician> {
                           child: TextField(
                             controller: _controller,
                             decoration: const InputDecoration(
-                              labelText: "Ask me anything!"
-                            ),
+                                labelText: "Ask me anything!"),
                             onSubmitted: (value) {
                               submitQuery(value);
                             },
                           ),
                         ),
                         InkWell(
-                          onTap: () {
-                            submitQuery(_controller.text);
-                          },
-                            child: Icon(Icons.search)
-                        )
+                            onTap: () {
+                              submitQuery(_controller.text);
+                            },
+                            child: Icon(Icons.search))
                       ],
                     ),
-                    const SizedBox(height: 20,),
+                    const SizedBox(
+                      height: 20,
+                    ),
                     ListView.builder(
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,
@@ -197,13 +195,19 @@ class _PediatricianState extends State<Pediatrician> {
             backgroundColor: MyColors.accent3,
             label: Text("Find a Pediatrician"),
             onPressed: () {
-              showDialog(context: context, builder: (_) {
-                void isError() {
-                  Navigator.of(context).pop();
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Pincode not valid please try again"), behavior: SnackBarBehavior.floating,));
-                }
-                return findPediatrician(isError);
-              });
+              showDialog(
+                  context: context,
+                  builder: (_) {
+                    void isError() {
+                      Navigator.of(context).pop();
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        content: Text("Pincode not valid please try again"),
+                        behavior: SnackBarBehavior.floating,
+                      ));
+                    }
+
+                    return findPediatrician(isError);
+                  });
             },
           ),
         ),
