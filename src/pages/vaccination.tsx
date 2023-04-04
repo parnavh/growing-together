@@ -1,129 +1,173 @@
-import type { FC } from "react";
 import Head from "next/head";
-import Image from "next/image";
-import Nav from "@/components/Nav";
-import { Progress, Group, Flex, Alert, Text, Chip, Title } from "@mantine/core";
+import {
+  Title,
+  Group,
+  Loader,
+  Pagination,
+  Switch,
+  Indicator,
+} from "@mantine/core";
 import { Calendar } from "@mantine/dates";
-import { useMediaQuery } from "@mantine/hooks";
-import { IconAlertCircle } from "@tabler/icons-react";
-import VaccinationCard from "@/components/VaccinationCard";
+import VaccineCard from "@/components/VaccineCard";
 import { withAuth } from "@/utils/protect";
+import Layout from "@/components/Layout";
+import type { NextPage } from "next";
+import { api } from "@/utils/api";
+import { useEffect, useState } from "react";
 
 export const getServerSideProps = withAuth();
 
-const Vaccination: FC = () => {
-  const medScreen = useMediaQuery("(min-width: md)");
+const Vaccination: NextPage = () => {
+  const { data } = api.vaccination.getVacinations.useQuery();
+  const [activePage, setActivePage] = useState(1);
+  const [mandatoryOnly, setMandatoryOnly] = useState(false);
+  const [upcomingOnly, setUpcomingOnly] = useState(false);
+  const [activeDate, setActiveDate] = useState<null | Date>(null);
+
+  useEffect(() => {
+    setActivePage(1);
+  }, [mandatoryOnly, upcomingOnly]);
+
+  if (!data) {
+    return (
+      <Layout>
+        <Head>
+          <title>Vaccination | Growing Together</title>
+        </Head>
+        <div className="mt-10 flex justify-center">
+          <Loader />
+        </div>
+      </Layout>
+    );
+  }
+
+  const vaccinations = data.vaccinations.filter((v) => {
+    if (mandatoryOnly) {
+      return v.requirements.includes("Mandatory");
+    }
+    if (upcomingOnly) {
+      return v.dueDate.getTime() > Date.now();
+    }
+    if (activeDate) {
+      return (
+        v.dueDate.getDate() === activeDate.getDate() &&
+        v.dueDate.getMonth() === activeDate.getMonth() &&
+        v.dueDate.getFullYear() === activeDate.getFullYear()
+      );
+    }
+    return true;
+  });
+
+  const vaccinationPerPage = 2;
+
+  const activeVaccinations = vaccinations
+    .sort((a, b) => a.ageGroup - b.ageGroup)
+    .slice(
+      (activePage - 1) * vaccinationPerPage,
+      activePage * vaccinationPerPage
+    );
+
+  const isVaccineDueOnDate = (date: Date) => {
+    return data.vaccinations.some((v) => {
+      return (
+        v.dueDate.getDate() === date.getDate() &&
+        v.dueDate.getMonth() === date.getMonth() &&
+        v.dueDate.getFullYear() === date.getFullYear()
+      );
+    });
+  };
+
   return (
-    <>
+    <Layout>
       <Head>
         <title>Vaccination | Growing Together</title>
       </Head>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-[#D0EBFF]">
-        <Image
-          width={199}
-          height={199}
-          src="/images/logo.png"
-          alt="Growing Together Logo"
-        />
-
-        <Nav activeTab="vaccination" />
-
-        {/* <Progress
-          size="xl"
-          mt={"4rem"}
-          miw={"65%"}
-          sections={[
-            { value: 40, color: 'cyan' },
-            { value: 20, color: 'blue' },
-            { value: 15, color: 'indigo' },
-          ]}
-        />
-
-        <Alert icon={<IconAlertCircle size="2rem" />} color={"red"} mt={"2rem"} radius={"md"} p={"md"}>
-          <Title order={4} color={"red"}>Vaccination #2 is due!</Title>
-          <Text display={"inline"}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, sint? &nbsp;</Text>
-          <Chip display={"inline"} color={"black"} radius={"md"}>Already Done?</Chip>
-        </Alert>
-
-        <Flex w={"65%"} my={"3rem"}>
-          <Calendar size={"xl"} bg={"white"} my={"auto"} p={"1rem"} />
-          <Group>
-            <VaccinationCard />
-            <VaccinationCard />
-            <VaccinationCard />
-          </Group>
-        </Flex> */}
-
-        <Progress
-          size="xl"
-          mt={"4rem"}
-          miw={"65%"}
-          sections={[
-            { value: 40, color: "cyan" },
-            { value: 20, color: "blue" },
-            { value: 15, color: "indigo" },
-          ]}
-        />
-
-        <Alert
-          icon={<IconAlertCircle size="2rem" />}
-          color={"red"}
-          mt={"2.5rem"}
-          radius={"md"}
-          p={"md"}
-          mx={{ base: "md" }}
+      <Title order={1} ta="center" mt={"3rem"} size={"2rem"} weight={600}>
+        Ensure your child&apos;s protection by tracking their vaccines
+      </Title>
+      <div className="mx-auto mt-16 flex w-[65%] justify-start">
+        <div className="flex flex-col">
+          <div>
+            <Calendar
+              bg="white"
+              size="lg"
+              my={{ base: "1rem", lg: "auto" }}
+              mx={"auto"}
+              p={{ md: "sm" }}
+              renderDay={(date) => {
+                return (
+                  <Indicator
+                    size={6}
+                    color="red"
+                    offset={-2}
+                    disabled={!isVaccineDueOnDate(date)}
+                    onClick={() => setActiveDate(date)}
+                  >
+                    {date.getDate()}
+                  </Indicator>
+                );
+              }}
+            />
+          </div>
+          <div className="mt-5">
+            <h3 className="mb-3 text-2xl font-semibold">Legend:</h3>
+            <div className="flex items-center">
+              <div className="mr-2 h-4 w-4 rounded-full bg-[#228BE6]"></div>
+              <p className="my-1 text-lg font-medium">Upcoming Vaccine</p>
+            </div>
+            <div className="flex items-center">
+              <div className="mr-2 h-4 w-4 rounded-full bg-[#66bb6a]"></div>
+              <p className="my-1 text-lg font-medium">Vaccine Currently Due</p>
+            </div>
+            <div className="flex items-center">
+              <div className="mr-2 h-4 w-4 rounded-full bg-[#ff6149]"></div>
+              <p className="my-1 text-lg font-medium">Overdue Vaccine</p>
+            </div>
+          </div>
+        </div>
+        <Group
+          className="flex flex-col"
+          mt={{ base: "3rem", lg: "0.5rem" }}
+          mx={{ lg: "3rem" }}
         >
-          <Title order={4} color={"red"}>
-            Vaccination #2 is due!
-          </Title>
-          <Text display={"inline"}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, sint?
-            &nbsp;
-          </Text>
-          <Chip display={"inline"} color={"black"} radius={"md"}>
-            Already Done?
-          </Chip>
-        </Alert>
-
-        <Flex
-          my={"3rem"}
-          direction={{ base: "column", lg: "row" }}
-          mx={"1rem"}
-          w={{ sm: "80%", lg: "65%" }}
-        >
-          <Calendar
-            bg={"white"}
-            size={medScreen ? "xl" : "lg"}
-            my={{ base: "1rem", lg: "auto" }}
-            mx={"auto"}
-            p={{ md: "sm" }}
+          <Switch
+            checked={mandatoryOnly}
+            onChange={(event) => setMandatoryOnly(event.currentTarget.checked)}
+            labelPosition="left"
+            label="Mandatory Vaccines Only"
+            size="md"
+            className="self-end"
           />
-          <Group mt={{ base: "3rem", lg: "0.5rem" }} mx={{ lg: "3rem" }}>
-            <VaccinationCard
-              vNo={3}
-              date={"22/12/23"}
-              desc={
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam earum, incidunt ducimus tenetur natus ratione adipisci ab fugiat distinctio vero neque tempore? Est, eligendi odio!"
-              }
+          <Switch
+            checked={upcomingOnly}
+            onChange={(event) => setUpcomingOnly(event.currentTarget.checked)}
+            labelPosition="left"
+            label="Upcoming Vaccinations Only"
+            size="md"
+            className="self-end"
+          />
+          {activeVaccinations.map((vaccination) => {
+            return (
+              <VaccineCard
+                key={vaccination.name}
+                {...vaccination}
+                weeks={data.weeks}
+              />
+            );
+          })}
+          <div className="mx-auto">
+            <Pagination
+              value={activePage}
+              onChange={(page) => setActivePage(page)}
+              total={vaccinations.length / vaccinationPerPage}
+              radius="lg"
+              className="mt-5"
+              color="blue"
             />
-            <VaccinationCard
-              vNo={4}
-              date={"23/12/23"}
-              desc={
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam earum, incidunt ducimus tenetur natus ratione adipisci ab fugiat distinctio vero neque tempore? Est, eligendi odio!"
-              }
-            />
-            <VaccinationCard
-              vNo={5}
-              date={"24/12/23"}
-              desc={
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam earum, incidunt ducimus tenetur natus ratione adipisci ab fugiat distinctio vero neque tempore? Est, eligendi odio!"
-              }
-            />
-          </Group>
-        </Flex>
-      </main>
-    </>
+          </div>
+        </Group>
+      </div>
+    </Layout>
   );
 };
 

@@ -12,7 +12,7 @@ const Submit: FC<Props> = ({ formValues }) => {
     "loading"
   );
 
-  const { mutate } = api.onboardingRouter.createProfile.useMutation();
+  const { mutate } = api.onboarding.createProfile.useMutation();
 
   useEffect(() => {
     mutate(formValues, {

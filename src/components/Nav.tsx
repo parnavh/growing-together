@@ -1,13 +1,11 @@
 import { Tabs } from "@mantine/core";
 import { useRouter } from "next/router";
 import type { FC } from "react";
-import { IconHome, IconVaccine, IconStethoscope } from "@tabler/icons-react";
+import { IconHome, IconVaccine, IconMessages } from "@tabler/icons-react";
 
 const Nav: FC = () => {
   const router = useRouter();
   const { pathname: activeTab } = router;
-
-  console.log("active:", activeTab);
 
   return (
     <Tabs
@@ -50,15 +48,15 @@ const Nav: FC = () => {
         </Tabs.Tab>
         <Tabs.Tab
           className={`flex-1 rounded-full text-xl font-bold ${
-            activeTab === "/paediatricians"
+            activeTab === "/consulting"
               ? "bg-white text-black"
               : "text-white hover:bg-white hover:text-black"
           }`}
-          value="/paediatricians"
+          value="/consulting"
         >
           <div className="flex items-center gap-3">
-            <IconStethoscope size={24} />
-            <span>Paediatricians</span>
+            <IconMessages size={24} />
+            <span>Consulting</span>
           </div>
         </Tabs.Tab>
       </Tabs.List>

@@ -1,4 +1,4 @@
-interface Vaccine {
+export interface Vaccine {
   name: string;
   information: string; // keep under 100 words
   requirements: string; // keep under 100 words
@@ -24,7 +24,7 @@ const vaccineData: Vaccine[] = [
   {
     name: "Oral Polio Vaccines",
     information:
-      "Polio is a disease that causes paralysis in children, Poliovirus lives in the throat and intestinal tract of a person and spreads by contact with faeces, Some children who get polio do not feel any symptoms, and others get symptoms similar to the common cold. In comparison, others may feel muscle pain and can be paralysed within a week, There is no treatment for polio, and some children may die from it.",
+      "Polio is a disease that causes paralysis in children, Poliovirus lives in the throat and intestinal tract of a person and spreads by contact with faeces. Some children who get polio do not feel any symptoms, and others get symptoms similar to the common cold. In comparison, others may feel muscle pain and can be paralysed within a week. There is no treatment for polio, and some children may die from it.",
     requirements: "Mandatory",
     sideEffects:
       "Common minor vaccine reaction associated with OPV are fever, irritability, malaise, and non-specific symptoms, such as diarrhea, headache, and/or muscle pain.",
@@ -47,7 +47,7 @@ const vaccineData: Vaccine[] = [
   {
     name: "DTP Vaccine",
     information:
-      "Healthcare professionals administer DTP (Diptheria, tetanus, pertussis) to children to prevent these three deadly diseases, Diptheria is a thick covering at the back of the throat. It causes breathing problems, paralysis and heart problems and even death in severe cases, Tetanus is a disease wherein the muscles of the body contract all over the body. It can lead to lockjaw and as a result of which the victim cannot swallow, Pertussis causes severe coughing spells that last for weeks. It can lead to pneumonia, brain damage, convulsions and even death",
+      "Healthcare professionals administer DTP to children to prevent three deadly diseases. Diptheria is a thick covering at the back of the throat causing breathing problems, paralysis and heart problems and even death in severe cases. Tetanus is a disease wherein the muscles contract all over the body leading to lockjaw as a result of which the victim cannot swallow. Pertussis causes severe coughing spells that last for weeks leading to pneumonia, brain damage, convulsions and even death",
     requirements: "Mandatory",
     sideEffects:
       "it is an intramuscular vaccine, In some cases, children who react adversely to the DTP shot should not get the second dose, Consult with a healthcare professional to know when to avoid the next dosage of DTP.",
@@ -60,8 +60,7 @@ const vaccineData: Vaccine[] = [
     name: "Haemophilus Influenza B Virus (HIB)e",
     information:
       "It prevents brain and spine damage if causing meningitis, Hib bacteria can cause mild issues such as ear infections, bronchitis, or severe blood illnesses, Hib can also cause pneumonia, severe swelling of the throat, infections of the joints, bones, covering of the heart, and even death in extreme cases.",
-    requirements:
-      "There is only 1 dosage for this vaccine in the vaccination programme for babies in India",
+    requirements: "Mandatory, Limited Availability",
     sideEffects:
       "Side effects amy include - pain or redness or swelling at the site of the injection, a high temperature, irritability, loss of appetite, sleepiness.",
     ageGroup: 6,
@@ -140,10 +139,7 @@ const vaccineData: Vaccine[] = [
     ageGroup: 26,
     maxAge: null,
     doses: 30,
-    interval: [
-      0, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52,
-      52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52,
-    ],
+    interval: [0, 52],
   },
   {
     name: "Chickenpox Varicella",

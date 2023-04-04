@@ -1,13 +1,4 @@
-import {
-  Card,
-  Text,
-  Button,
-  Image,
-  Group,
-  Badge,
-  Title,
-  Highlight,
-} from "@mantine/core";
+import { Card, Text, Button, Image, Group, Badge, Title } from "@mantine/core";
 import { type FC } from "react";
 import { type Article } from "@/utils/getData";
 

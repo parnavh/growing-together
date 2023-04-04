@@ -16,7 +16,7 @@ import { IconLocation, IconUser } from "@tabler/icons-react";
 import InputMask from "react-input-mask";
 import { useSession } from "next-auth/react";
 import Submit from "@/components/Submit";
-import { NextPage } from "next";
+import type { NextPage } from "next";
 
 export interface OnboardingFormValues {
   parentName: string;

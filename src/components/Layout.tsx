@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 import NextImage from "next/image";
-import { Avatar, Image } from "@mantine/core";
+import { Avatar } from "@mantine/core";
 import Link from "next/link";
 import type { FC, ReactNode } from "react";
 import Footer from "./Footer";
@@ -30,7 +30,7 @@ const Layout: FC<Props> = ({ children, showNav = true }) => {
           <Link href="/profile">
             <Avatar
               alt="Profile Picture"
-              src={(data && data.user.image) || "/images/profile.png"}
+              src={data?.user.image}
               radius="xl"
               size="lg"
             />

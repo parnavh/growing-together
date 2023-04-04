@@ -30,7 +30,7 @@ export default function Login() {
         <Image
           width={199}
           height={199}
-          src="/images/logo.png"
+          src="/images/logo.svg"
           alt="Growing Together Logo"
         />
 
