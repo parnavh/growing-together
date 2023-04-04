@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "833922589809",
+    "project_id": "growing-together-93182",
+    "storage_bucket": "growing-together-93182.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833922589809:android:ee447f4cc94875f69527d0",
+        "android_client_info": {
+          "package_name": "com.example.growing_together"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833922589809-neqcglj9fkv8ai181kroi6t7vs5josk6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.growing_together",
+            "certificate_hash": "f46fce3ee7a7e588e50ab95f1575afc75e99e1de"
+          }
+        },
+        {
+          "client_id": "833922589809-28pishgahlgm52rdv9elti5hhp41qvu0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgTO2ex0eRvi4-PxOPdEMiM8oiTH7PbkU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833922589809-28pishgahlgm52rdv9elti5hhp41qvu0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "833922589809-8tb3ntue4r0ihih147spq3718dossa42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.growingTogether"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
