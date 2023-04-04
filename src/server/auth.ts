@@ -15,16 +15,18 @@ declare module "next-auth" {
       id: string;
       childName: string;
       childDob: Date;
+      pinCode: string;
+      city: string;
       // ...other properties
       // role: UserRole;
     } & DefaultSession["user"];
   }
 
   interface User {
-    // ...other properties
     childName: string;
     childDob: Date;
-    // role: UserRole;
+    pinCode: string;
+    city: string;
   }
 }
 
@@ -35,7 +37,8 @@ export const authOptions: NextAuthOptions = {
         session.user.id = user.id;
         session.user.childName = user.childName;
         session.user.childDob = user.childDob;
-        // session.user.role = user.role; <-- put other properties on the session here
+        session.user.pinCode = user.pinCode;
+        session.user.city = user.city.toLowerCase();
       }
       return session;
     },
