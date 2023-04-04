@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 import NextImage from "next/image";
-import { Image } from "@mantine/core";
+import { Avatar, Image } from "@mantine/core";
 import Link from "next/link";
 import type { FC, ReactNode } from "react";
 import Footer from "./Footer";
@@ -26,14 +26,13 @@ const Layout: FC<Props> = ({ children, showNav = true }) => {
           />
         </Link>
 
-        <div className="absolute right-32 h-14 w-14 overflow-hidden rounded-full ">
+        <div className="absolute right-32 ">
           <Link href="/profile">
-            <Image
-              className="object-cover"
-              width={56}
-              height={56}
-              src={(data && data.user.image) || "/images/profile.png"}
+            <Avatar
               alt="Profile Picture"
+              src={(data && data.user.image) || "/images/profile.png"}
+              radius="xl"
+              size="lg"
             />
           </Link>
         </div>
