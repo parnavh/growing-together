@@ -29,7 +29,8 @@ class _PediatricianState extends State<Pediatrician> {
     // io.File(syncPath).existsSync();
 
     DialogAuthCredentials credentials = await DialogAuthCredentials.fromFile(
-        'assets/keys/growing-together-382320-691427eb5c51.json');
+        // 'assets/keys/growing-together-382320-691427eb5c51.json'
+        'assets/keys/dialogflow_privateKey.json');
     var rnd = math.Random();
 
     setState(() {
