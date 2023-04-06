@@ -37,8 +37,8 @@ export const authOptions: NextAuthOptions = {
         session.user.id = user.id;
         session.user.childName = user.childName;
         session.user.childDob = user.childDob;
-        session.user.pinCode = user.pinCode;
-        session.user.city = user.city.toLowerCase();
+        session.user.pinCode = user.pinCode?.replace(/\s/g, "");
+        session.user.city = user.city?.toLowerCase();
       }
       return session;
     },
